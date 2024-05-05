@@ -1,0 +1,237 @@
+/* ==UserStyle==
+@name				Bilibili Lite
+@namespace			github.com/openstyles/stylus
+@version			0.1.0
+@description		Bilibili 移除部分广告，以及禁用部分视图
+@author				zhaonan
+@preprocessor		stylus
+@updateURL			https://raw.githubusercontent.com/invalidunit/css_stylus/main/bilibili_lite.user.css
+
+
+@advanced checkbox hide-desktop-download "隐藏首页右下角下载桌面端" 1
+@advanced checkbox hide-video-ads "隐藏播放视频右侧广告" 1
+@advanced checkbox hide-top-right-user-vip "隐藏导航栏个人菜单中的大会员广告" 1
+@advanced checkbox hide-top-right-vip "隐藏导航栏右侧大会员" 1
+@advanced checkbox hide-top-right-upload "隐藏导航栏右侧投稿" 1
+@advanced checkbox hide-ai-title "隐藏视频下方 AI 总结测试标题" 1
+@advanced checkbox hide-auth "隐藏个人主页右侧 bilibili 认证" 1
+@advanced checkbox hide-creation "隐藏个人主页右侧创作中心" 1
+@advanced checkbox hide-studio "隐藏个人主页右侧直播间" 1
+@advanced checkbox hide-info "隐藏个人主页右侧个人资料" 1
+@advanced checkbox hide-vip "隐藏大会员痕迹" 1
+@advanced checkbox hide-top-left-01 "隐藏导航栏左侧 01" 0
+@advanced checkbox hide-top-left-02 "隐藏导航栏左侧 02" 0
+@advanced checkbox hide-top-left-03 "隐藏导航栏左侧 03" 0
+@advanced checkbox hide-top-left-04 "隐藏导航栏左侧 04" 0
+@advanced checkbox hide-top-left-05 "隐藏导航栏左侧 05" 1
+@advanced checkbox hide-top-left-06 "隐藏导航栏左侧 06" 0
+@advanced checkbox hide-top-left-07 "隐藏导航栏左侧 07" 0
+@advanced checkbox hide-top-left-08 "隐藏导航栏左侧 08" 1
+@advanced checkbox hide-top-left-09 "隐藏导航栏左侧 09" 1
+@advanced checkbox hide-top-left-10 "隐藏导航栏左侧 10" 1
+@advanced checkbox hide-top-right-01 "隐藏导航栏右侧 01" 0
+@advanced checkbox hide-top-right-02 "隐藏导航栏右侧 02" 0
+@advanced checkbox hide-top-right-03 "隐藏导航栏右侧 03" 0
+@advanced checkbox hide-top-right-04 "隐藏导航栏右侧 04" 0
+@advanced checkbox hide-top-right-05 "隐藏导航栏右侧 05" 0
+@advanced checkbox hide-top-right-06 "隐藏导航栏右侧 06" 0
+@advanced checkbox hide-top-right-07 "隐藏导航栏右侧 07" 1
+@advanced checkbox hide-bottom "隐藏底部" 1
+==/UserStyle== */
+
+@-moz-document domain("bilibili.com") {
+	if hide-desktop-download {
+		/* 首页右下角会出现下载桌面端广告，概率出现？ */
+		.desktop-download-tip{
+			display: none !important;
+		}
+	}
+	if hide-video-ads {
+		/* 视频右边，接下来播放上方出现的广告 */
+		.ad-report.video-card-ad-small{
+			display: none !important;
+		}
+		/* 视频右边，接下来播放下方出现的广告，例如视频与“我的世界”有关这里将会显示我的世界 B 站版下载 */
+		.video-page-game-card-small{
+			display: none !important;
+		}
+		/* 视频右边，列表最下方的广告，概率出现？ */
+		#right-bottom-banner{
+			display: none !important;
+		}
+		/* 视频右边，列表最下方的广告下方“大家围观的直播”，概率出现？ */
+		.pop-live-small-mode{
+			display: none !important;
+		}
+	}
+	if hide-top-right-user-vip {
+		/* 顶部导航栏个人中的大会员广告 */
+		.avatar-panel-popover .vip-entry-containter{
+			display: none !important;
+		}
+	}
+	if hide-top-right-vip {
+		/* 顶部导航栏右侧大会员 */
+		.right-entry .vip-wrap{
+			display: none !important;
+		}
+	}
+	if hide-top-right-vip {
+		/* 顶部导航栏右侧投稿 */
+		.right-entry .right-entry-item--upload{
+			display: none !important;
+		}
+	}
+	if hide-ai-title {
+		/* 视频下方 AI 总结上方的测试版文字隐藏 */
+		.video-ai-assistant-bg span{
+			display: none !important;
+		}
+	}
+	if hide-auth {
+		/* 个人主页右侧 bilibili 认证 */
+		.col-2 div .section{
+			display: none !important;
+		}
+	}
+	if hide-creation {
+		/* 个人主页右侧创作中心 */
+		.col-2 .section.i-m{
+			display: none !important;
+		}
+	}
+	if hide-studio {
+		/* 个人主页右侧创作中心 */
+		.col-2 .section.i-live{
+			display: none !important;
+		}
+	}
+	if hide-info {
+		/* 个人主页右侧个人资料 */
+		.col-2 .section.user-info{
+			display: none !important;
+		}
+	}
+	if hide-vip {
+		/* 顶部导航栏个人名称下方的狗牌 */
+		.avatar-panel-popover .vip-item{
+			display: none !important;
+		}
+		/* 顶部导航栏个人头像旁边的“大”字，以及个人主页头像旁边的“大”字 */
+		.bili-avatar-icon-big-vip{
+			display: none !important;
+		}
+		/* 个人主页中的年度大会员狗牌 */
+		.h-viplabel{
+			display: none !important;
+		}
+	}
+	if hide-top-left-01 {
+		/* 顶部导航栏左侧第 01 个 */
+		.left-entry li:nth-child(1){
+			display: none !important;
+		}
+	}
+	if hide-top-left-02 {
+		/* 顶部导航栏左侧第 02 个 */
+		.left-entry li:nth-child(2){
+			display: none !important;
+		}
+	}
+	if hide-top-left-03 {
+		/* 顶部导航栏左侧第 03 个 */
+		.left-entry li:nth-child(6){
+			display: none !important;
+		}
+	}
+	if hide-top-left-04 {
+		/* 顶部导航栏左侧第 04 个 */
+		.left-entry li:nth-child(6){
+			display: none !important;
+		}
+	}
+	if hide-top-left-05 {
+		/* 顶部导航栏左侧第 05 个， 当前为“会员购” */
+		.left-entry li:nth-child(5){
+			display: none !important;
+		}
+	}
+	if hide-top-left-06 {
+		/* 顶部导航栏左侧第 06 个 */
+		.left-entry li:nth-child(6){
+			display: none !important;
+		}
+	}
+	if hide-top-left-07 {
+		/* 顶部导航栏左侧第 07 个 */
+		.left-entry li:nth-child(7){
+			display: none !important;
+		}
+	}
+	if hide-top-left-08 {
+		/* 顶部导航栏左侧第 08 个， 当前为“MSI 推广” */
+		.left-entry li:nth-child(8){
+			display: none !important;
+		}
+	}
+	if hide-top-left-09 {
+		/* 顶部导航栏左侧第 09 个， 当前为“下载客户端” */
+		.left-entry li:nth-child(9){
+			display: none !important;
+		}
+	}
+	if hide-top-left-10 {
+		/* 顶部导航栏左侧第 10 个 */
+		.left-entry li:nth-child(10){
+			display: none !important;
+		}
+	}
+	if hide-top-right-01 {
+		/* 顶部导航栏右侧第 01 个 */
+		.right-entry li:nth-child(1){
+			display: none !important;
+		}
+	}
+	if hide-top-right-02 {
+		/* 顶部导航栏右侧第 02 个 */
+		.right-entry li:nth-child(2){
+			display: none !important;
+		}
+	}
+	if hide-top-right-03 {
+		/* 顶部导航栏右侧第 03 个 */
+		.right-entry li:nth-child(3){
+			display: none !important;
+		}
+	}
+	if hide-top-right-04 {
+		/* 顶部导航栏右侧第 04 个 */
+		.right-entry li:nth-child(4){
+			display: none !important;
+		}
+	}
+	if hide-top-right-05 {
+		/* 顶部导航栏右侧第 05 个 */
+		.right-entry li:nth-child(5){
+			display: none !important;
+		}
+	}
+	if hide-top-right-06 {
+		/* 顶部导航栏右侧第 06 个 */
+		.right-entry li:nth-child(6){
+			display: none !important;
+		}
+	}
+	if hide-top-right-07 {
+		/* 顶部导航栏右侧第 07 个， 当前为“创作中心” */
+		.right-entry li:nth-child(7){
+			display: none !important;
+		}
+	}
+	if hide-bottom {
+		/* 整个底部栏隐藏 */
+		.bili-footer{
+			display: none !important;
+		}
+	}
+}
