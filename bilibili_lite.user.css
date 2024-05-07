@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.1.5
+@version			0.1.6
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -50,6 +50,14 @@
 		top: 50%;
 		width: 30%;
 	}
+	/* 消息中心的导航栏居然是独立的。。。 */
+	.nav-search-box{
+		position: absolute !important;
+		transform: translate(-50%, -50%) !important;
+		left: 50%;
+		top: 50%;
+		width: 30%;
+	}
 	/* 修复导航栏右侧悬浮窗口因为隐藏投稿而过于偏移出屏幕右边的问题 */
 	.v-popover-wrap:not([class="v-popover-wrap header-avatar-wrap"]):not([class="v-popover-wrap right-entry__outside right-entry--message"]) .v-popover{
 		margin-left: custom-window-offset !important;
@@ -83,6 +91,10 @@
 		.avatar-panel-popover .vip-entry-containter{
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div span .mini-vip{
+			display: none !important;
+		}
 	}
 	if hide-top-right-vip {
 		/* 顶部导航栏右侧大会员 */
@@ -93,6 +105,10 @@
 	if hide-top-right-upload {
 		/* 顶部导航栏右侧投稿 */
 		.right-entry .right-entry-item--upload{
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-user-center div:nth-child(3) span span{
 			display: none !important;
 		}
 	}
@@ -151,22 +167,38 @@
 		.left-entry li:nth-child(1){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(1){
+			display: none !important;
+		}
 	}
 	if hide-top-left-02 {
 		/* 顶部导航栏左侧第 02 个 */
 		.left-entry li:nth-child(2){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(2){
+			display: none !important;
+		}
 	}
 	if hide-top-left-03 {
 		/* 顶部导航栏左侧第 03 个 */
-		.left-entry li:nth-child(6){
+		.left-entry li:nth-child(3){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(3){
 			display: none !important;
 		}
 	}
 	if hide-top-left-04 {
 		/* 顶部导航栏左侧第 04 个 */
-		.left-entry li:nth-child(6){
+		.left-entry li:nth-child(4){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(4){
 			display: none !important;
 		}
 	}
@@ -175,10 +207,18 @@
 		.left-entry li:nth-child(5){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(5){
+			display: none !important;
+		}
 	}
 	if hide-top-left-06 {
 		/* 顶部导航栏左侧第 06 个 */
 		.left-entry li:nth-child(6){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(6){
 			display: none !important;
 		}
 	}
@@ -187,10 +227,18 @@
 		.left-entry li:nth-child(7){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(7){
+			display: none !important;
+		}
 	}
 	if hide-top-left-08 {
 		/* 顶部导航栏左侧第 08 个， 当前为“MSI 推广” */
 		.left-entry li:nth-child(8){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(8){
 			display: none !important;
 		}
 	}
@@ -199,10 +247,18 @@
 		.left-entry li:nth-child(9){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(9){
+			display: none !important;
+		}
 	}
 	if hide-top-left-10 {
 		/* 顶部导航栏左侧第 10 个 */
 		.left-entry li:nth-child(10){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.nav-link ul li:nth-child(10){
 			display: none !important;
 		}
 	}
@@ -211,10 +267,18 @@
 		.right-entry li:nth-child(1){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(1){
+			display: none !important;
+		}
 	}
 	if hide-top-right-02 {
 		/* 顶部导航栏右侧第 02 个 */
 		.right-entry li:nth-child(2){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(2){
 			display: none !important;
 		}
 	}
@@ -223,10 +287,18 @@
 		.right-entry li:nth-child(3){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(3){
+			display: none !important;
+		}
 	}
 	if hide-top-right-04 {
 		/* 顶部导航栏右侧第 04 个 */
 		.right-entry li:nth-child(4){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(4){
 			display: none !important;
 		}
 	}
@@ -235,16 +307,38 @@
 		.right-entry li:nth-child(5){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(5){
+			display: none !important;
+		}
 	}
 	if hide-top-right-06 {
 		/* 顶部导航栏右侧第 06 个 */
 		.right-entry li:nth-child(6){
 			display: none !important;
 		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(6){
+			display: none !important;
+		}
 	}
 	if hide-top-right-07 {
 		/* 顶部导航栏右侧第 07 个， 当前为“创作中心” */
 		.right-entry li:nth-child(7){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(7){
+			display: none !important;
+		}
+	}
+	if hide-top-right-08 {
+		/* 顶部导航栏右侧第 08 个， 当前为“创作中心” */
+		.right-entry li:nth-child(8){
+			display: none !important;
+		}
+		/* 消息中心的导航栏居然是独立的。。。 */
+		.user-con.signin div:nth-child(8){
 			display: none !important;
 		}
 	}
