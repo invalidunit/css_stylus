@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.1.7
+@version			0.1.8
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -161,6 +161,13 @@
 		/* 个人主页中的年度大会员狗牌 */
 		.h-viplabel{
 			display: none !important;
+		}
+		/* 动态首页中的年度大会员狗牌 */
+		.bili-dyn-my-info__header .info .info__icon span:nth-child(1){
+			display: none !important;
+		}
+		.bili-dyn-my-info__header .info .info__icon span:nth-child(2){
+			margin-left: -1px !important;
 		}
 	}
 	if hide-community {
