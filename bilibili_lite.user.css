@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.2.4-1
+@version			0.2.5
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -23,7 +23,7 @@
 @advanced checkbox hide-studio "隐藏个人主页右侧直播间" 1
 @advanced checkbox hide-info "隐藏个人主页右侧个人资料" 1
 @advanced checkbox hide-vip "隐藏大会员痕迹" 1
-@advanced text custom-window-offset "自定义导航栏右侧悬浮窗口偏移" -320%
+@advanced number custom-window-offset "自定义导航栏右侧悬浮窗口偏移" -320
 @advanced checkbox hide-community "隐藏动态右侧的社区中心" 1
 @advanced checkbox hide-top-left-01 "隐藏导航栏左侧 01" 0
 @advanced checkbox hide-top-left-02 "隐藏导航栏左侧 02" 0
@@ -64,7 +64,7 @@
 	}
 	/* 修复导航栏右侧悬浮窗口因为隐藏投稿而过于偏移出屏幕右边的问题 */
 	.v-popover-wrap:not([class="v-popover-wrap header-avatar-wrap"]):not([class="v-popover-wrap right-entry__outside right-entry--message"]) .v-popover{
-		margin-left: custom-window-offset !important;
+		margin-left: custom-window-offset * 1% !important;
 	}
 	if hide-desktop-download {
 		/* 首页右下角会出现下载桌面端广告，概率出现？ */
