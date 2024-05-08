@@ -1,0 +1,45 @@
+/* ==UserStyle==
+@name				Bilibili Tint Color
+@namespace			github.com/openstyles/stylus
+@version			0.1.0
+@description		Bilibili 自定义主色调（强调色）
+@author				zhaonan
+@preprocessor		stylus
+@updateURL			https://raw.githubusercontent.com/invalidunit/css_stylus/main/bilibili_tint_color.user.css
+
+@advanced number color-img "图片变色百分比" 150
+@advanced color color-0 "color-0" #FF7790
+@advanced color color-1 "color-1" #FF4455
+@advanced color color-2 "color-2" #FF778921
+
+==/UserStyle== */
+
+@-moz-document domain("bilibili.com") {
+	/* 全局变量 */
+	:root{
+		--brand_blue: color-0 !important;
+		--text_link: color-0 !important;
+		--Brand_blue: color-0 !important;
+		--v_brand_blue_thin: color-2 !important;
+	}
+	/* 全局变量 */
+	::selection{
+		background: color-1 !important;
+	}
+	/* 扭曲弹幕开关颜色 */
+	.icon.normal,.icon.video,.icon.search-word,.bui-danmaku-switch-label,input[type="checkbox"]{
+		filter: hue-rotate(color-img deg) !important;
+	}
+	/* 个人主页的“主页”下划线颜色 */
+	.n-cursor{
+		background: color-1 !important;
+	}
+	/* 个人主页的“我的粉丝会看到”和“最新发布”下划线颜色 */
+	.be-tab-cursor{
+		border-bottom: 1px solid color-1 !important;
+	}
+	/* 个人主页的“我的粉丝会看到”和“最新发布”下划线上方三角形颜色 */
+	.be-tab-cursor:after{
+		border-bottom: 3px solid color-1 !important;
+	}
+}
