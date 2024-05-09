@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.3.1
+@version			0.3.2
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -9,6 +9,7 @@
 
 
 @advanced checkbox hide-front-page-ads "隐藏首页视频中插入的广告" 1
+@advanced checkbox hide-front-page-ads-method "替换内容/直接隐藏" 1
 @advanced checkbox hide-desktop-download "隐藏首页右下角下载桌面端" 1
 @advanced checkbox hide-charge "隐藏作者下方充电按钮" 1
 @advanced checkbox hide-video-cmd "隐藏播放视频中三连" 1
@@ -70,9 +71,25 @@
 		margin-left: custom-window-offset * 1% !important;
 	}
 	if hide-front-page-ads {
-		/* 首页视频中偶尔插入一两个广告，不过隐藏后会白一块 */
+		if hide-front-page-ads-method {
+			/* 首页视频中偶尔插入一两个广告，不过隐藏后会白一块 */
+			.feed-card div[class="bili-video-card is-rcmd"]{
+				display: none !important;
+			}
+            
+		}
+		/* 首页视频中偶尔插入一两个广告，替换内容 */
+		.feed-card div[class="bili-video-card is-rcmd"] .bili-video-card__wrap.__scale-wrap{
+			visibility: hidden !important;
+		}
+		.feed-card div[class="bili-video-card is-rcmd"] .extension-tips-v2::after{
+			content: '屏蔽也就只能做到这样了' !important;
+		}
+		.feed-card div[class="bili-video-card is-rcmd"] .extension-tips-v2::before{
+			content: '此处原本是个广告。。。' !important;
+		}
 		.feed-card div[class="bili-video-card is-rcmd"]{
-			display: none !important;
+			pointer-events: none !important;
 		}
 	}
 	if hide-desktop-download {
