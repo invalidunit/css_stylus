@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.2.9
+@version			0.3.0
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -82,7 +82,7 @@
 	}
 	if hide-charge {
 		/* 隐藏作者下方充电按钮 */
-		.new-charge-btn.charge-btn-loaded{
+		.old-charge-btn,.new-charge-btn{
 			display: none !important;
 		}
 	}
