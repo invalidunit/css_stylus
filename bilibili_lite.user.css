@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.2.8
+@version			0.2.9
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -13,6 +13,7 @@
 @advanced checkbox hide-charge "隐藏作者下方充电按钮" 1
 @advanced checkbox hide-video-cmd "隐藏播放视频中三连" 1
 @advanced checkbox hide-video-ads "隐藏播放视频右侧广告" 1
+@advanced checkbox hide-barrage-list "隐藏播放视频右侧弹幕列表" 1
 @advanced checkbox hide-top-right-user-vip "隐藏导航栏个人菜单中的大会员广告" 1
 @advanced checkbox hide-recommended-services "隐藏导航栏个人菜单中的推荐服务" 1
 @advanced checkbox hide-top-right-vip "隐藏导航栏右侧大会员" 1
@@ -109,6 +110,12 @@
 		}
 		/* 视频右边，列表最下方的广告下方“大家围观的直播”，概率出现？ */
 		.pop-live-small-mode{
+			display: none !important;
+		}
+	}
+	if hide-barrage-list {
+		/* 视频右边，弹幕列表 */
+		.danmaku-box{
 			display: none !important;
 		}
 	}
