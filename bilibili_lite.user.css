@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.3.3
+@version			0.3.4
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -27,6 +27,7 @@
 @advanced checkbox hide-creation "隐藏个人主页右侧创作中心" 1
 @advanced checkbox hide-studio "隐藏个人主页右侧直播间" 1
 @advanced checkbox hide-info "隐藏个人主页右侧个人资料" 1
+@advanced checkbox hide-game "隐藏个人主页右侧最近玩过的游戏" 1
 @advanced checkbox hide-vip "隐藏大会员痕迹" 1
 @advanced number custom-window-offset "自定义导航栏右侧悬浮窗口偏移" -320
 @advanced checkbox hide-community "隐藏动态右侧的社区中心" 1
@@ -227,6 +228,12 @@
 			display: none !important;
 		}
 	}
+	if hide-game {
+		/* 个人主页右侧个人资料 */
+		.col-2 .section.game{
+			display: none !important;
+		}
+	}
 	if hide-vip {
 		/* 顶部导航栏个人资料处修正大会员红色字体为黑色 */
 		.avatar-panel-popover .nickname-item{
@@ -263,6 +270,19 @@
 		}
 		.bili-pay-box-wrapper{
 			height: 97px !important;
+		}
+     /* 新番中大量与大会员相关的元素 */
+     /* 视频左下角，成为大会员按钮 */
+		.promptBar_remindActionWrap___CcG1{
+			display: none !important;
+		}
+     /* 视频左下角，“本片是大会员专享内容”文本 */
+		.promptBar_title__PKo6n{
+			display: none !important;
+		}
+     /* 视频右上角，“开通大会员 热播内容看不停” */
+		.vipPaybar_container__p_lv5{
+			display: none !important;
 		}
 	}
 	if hide-community {
