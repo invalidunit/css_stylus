@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.3.4
+@version			0.3.5
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -28,6 +28,10 @@
 @advanced checkbox hide-studio "隐藏个人主页右侧直播间" 1
 @advanced checkbox hide-info "隐藏个人主页右侧个人资料" 1
 @advanced checkbox hide-game "隐藏个人主页右侧最近玩过的游戏" 1
+@advanced checkbox hide-home-watchlater "隐藏首页右下稍后再看" 0
+@advanced checkbox hide-home-refresh "隐藏首页右下刷新内容" 0
+@advanced checkbox hide-home-feedback "隐藏首页右下反馈" 1
+@advanced checkbox hide-home-back-to-top "隐藏首页右下返回顶部" 0
 @advanced checkbox hide-vip "隐藏大会员痕迹" 1
 @advanced number custom-window-offset "自定义导航栏右侧悬浮窗口偏移" -320
 @advanced checkbox hide-community "隐藏动态右侧的社区中心" 1
@@ -231,6 +235,30 @@
 	if hide-game {
 		/* 个人主页右侧个人资料 */
 		.col-2 .section.game{
+			display: none !important;
+		}
+	}
+	if hide-home-watchlater {
+		/* 主页右下角稍后播放按钮 */
+		.palette-button-wrap .watchlater-pip-button{
+			display: none !important;
+		}
+	}
+	if hide-home-refresh {
+		/* 主页右下角刷新内容按钮 */
+		.palette-button-wrap .flexible-roll-btn{
+			display: none !important;
+		}
+	}
+	if hide-home-feedback {
+		/* 主页右下角反馈按钮 */
+		.palette-button-wrap .storage-box{
+			display: none !important;
+		}
+	}
+	if hide-home-back-to-top {
+		/* 主页右下角返回顶部按钮 */
+		.palette-button-wrap .top-btn-wrap{
 			display: none !important;
 		}
 	}
