@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.3.5
+@version			0.3.6
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -33,7 +33,7 @@
 @advanced checkbox hide-home-feedback "隐藏首页右下反馈" 1
 @advanced checkbox hide-home-back-to-top "隐藏首页右下返回顶部" 0
 @advanced checkbox hide-vip "隐藏大会员痕迹" 1
-@advanced number custom-window-offset "自定义导航栏右侧悬浮窗口偏移" -320
+@advanced number custom-window-offset-right "自定义导航栏右侧悬浮窗口偏移" -320
 @advanced checkbox hide-community "隐藏动态右侧的社区中心" 1
 @advanced checkbox hide-top-left-01 "隐藏导航栏左侧 01" 0
 @advanced checkbox hide-top-left-02 "隐藏导航栏左侧 02" 0
@@ -72,9 +72,14 @@
 		top: 50%;
 		width: 30%;
 	}
-	/* 修复导航栏右侧悬浮窗口因为隐藏投稿而过于偏移出屏幕右边的问题 */
+	/* 修复导航栏左侧悬浮窗口过于偏移出屏幕左边的问题 */
+	.v-popover-content{
+		margin-left: 110% !important;
+		background: #fff !important;
+	}
+	/* 修复导航栏右侧悬浮窗口过于偏移出屏幕右边的问题 */
 	.v-popover-wrap:not([class="v-popover-wrap header-avatar-wrap"]):not([class="v-popover-wrap right-entry__outside right-entry--message"]) .v-popover{
-		margin-left: custom-window-offset * 1% !important;
+		margin-left: custom-window-offset-right * 1% !important;
 	}
 	if hide-front-page-ads {
 		if hide-front-page-ads-method {
@@ -165,6 +170,10 @@
 	if hide-recommended-services {
 		/* 隐藏导航栏个人菜单中的推荐服务 */
 		.links-item .v-popover-wrap{
+			display: none !important;
+		}
+		/* 隐藏导航栏个人菜单中的推荐服务（消息中心） */
+		.vp-container .links a:nth-child(3){
 			display: none !important;
 		}
 	}
@@ -267,8 +276,16 @@
 		.avatar-panel-popover .nickname-item{
 			color: #000000 !important;
 		}
+		/* 顶部导航栏个人资料处修正大会员红色字体为黑色（消息中心） */
+		.vp-container .nickname{
+			color: #000000 !important;
+		}
 		/* 顶部导航栏个人名称下方的狗牌 */
 		.avatar-panel-popover .vip-item{
+			display: none !important;
+		}
+		/* 顶部导航栏个人名称下方的狗牌（消息中心） */
+		.vp-container .levelIcon{
 			display: none !important;
 		}
 		/* 顶部导航栏个人头像旁边的“大”字，以及个人主页头像旁边的“大”字 */
