@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.4.1
+@version			0.4.2
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -78,6 +78,10 @@
 	/* 修复导航栏右侧悬浮窗口过于偏移出屏幕右边的问题 */
 	.v-popover-wrap:not([class="v-popover-wrap header-avatar-wrap"]):not([class="v-popover-wrap right-entry__outside right-entry--message"]) .v-popover{
 		margin-left: custom-window-offset-right * 1% !important;
+	}
+	/* 隐藏弹幕发送框内多余的东西 */
+	.bpx-player-video-inputbar .bpx-player-dm-hint{
+		display: none !important;
 	}
 	if hide-front-page-ads {
 		/* 首页视频中偶尔插入一两个广告，不过隐藏后会白一块 */
