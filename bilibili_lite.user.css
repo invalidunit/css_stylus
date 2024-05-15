@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.3.9
+@version			0.4.0
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -24,6 +24,7 @@
 @advanced checkbox hide-top-right-upload "隐藏导航栏右侧投稿" 1
 @advanced checkbox hide-ai-title "隐藏视频下方 AI 总结测试标题" 1
 @advanced checkbox hide-ai-in-unsupport "若不支持，则隐藏视频下方 AI" 1
+@advanced checkbox hide-video-notes "隐藏视频下方笔记" 1
 @advanced checkbox hide-video-bottom-ad "隐藏评论区上方广告" 1
 @advanced checkbox hide-auth "隐藏个人主页右侧 bilibili 认证" 1
 @advanced checkbox hide-creation "隐藏个人主页右侧创作中心" 1
@@ -36,6 +37,7 @@
 @advanced checkbox hide-home-back-to-top "隐藏首页右下返回顶部" 0
 @advanced checkbox hide-feedback "隐藏右下反馈" 1
 @advanced checkbox hide-vip "隐藏大会员痕迹" 1
+@advanced checkbox show-video-desc "强制展开视频介绍" 1
 @advanced number custom-window-offset-right "自定义导航栏右侧悬浮窗口偏移" -320
 @advanced checkbox hide-community "隐藏动态右侧的社区中心" 1
 @advanced checkbox hide-top-left-01 "隐藏导航栏左侧 01" 0
@@ -194,6 +196,11 @@
 			display: none !important;
 		}
 	}
+	if hide-video-notes {
+		.video-note{
+			display: none !important;
+		}
+	}
 	if hide-video-bottom-ad {
 		/* 评论区上方广告横幅 */
 		#bannerAd{
@@ -326,6 +333,19 @@
 		}
      /* 隐藏成为大会员全屏弹窗 */
 		.dialog1080p_popup_1080p_wrapper__8XOGL{
+			display: none !important;
+		}
+     /* 视频右上方作者处，资料展示的大会员狗牌 */
+		.user-label{
+			display: none !important;
+		}
+	}
+	if show-video-desc {
+		/* 强制展开视频介绍 */
+		.video-desc-container .basic-desc-info{
+			height: 100% !important;
+		}
+		.video-desc-container .toggle-btn{
 			display: none !important;
 		}
 	}
