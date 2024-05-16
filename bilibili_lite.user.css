@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.4.3
+@version			0.4.4
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -196,6 +196,13 @@
 		/* 视频下方 AI 总结上方的测试版文字隐藏 */
 		.video-ai-assistant-bg span{
 			display: none !important;
+		}
+		/* 视频下方 AI 总结下方文字 */
+		.video-ai-assistant .video-ai-assistant-icon{
+			margin-right: -0px !important;
+		}
+		.video-ai-assistant-info{
+			text-indent: -9999px !important;
 		}
 	}
 	if hide-ai-in-unsupport {
