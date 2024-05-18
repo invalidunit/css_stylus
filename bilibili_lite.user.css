@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.4.9
+@version			0.5.0
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -374,6 +374,18 @@
 		}
 		.name{
 			color: #000000 !important;
+		}
+     /* 视频评论区大会员名字修正为黑色 */
+		.user-name,.sub-user-name{
+			color: #000000 !important;
+		}
+     /* 视频评论区大会员名片中名字修正为黑色 */
+		.card-user-name{
+			color: #000000 !important;
+		}
+     /* 视频评论区大会员名片中狗牌隐藏 */
+		.card-user-vip{
+			display: none !important;
 		}
 	}
 	if show-video-desc {
