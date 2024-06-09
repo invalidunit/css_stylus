@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.5.2
+@version			0.5.2-1
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -342,7 +342,7 @@
 		.bili-dyn-my-info__header .info .info__icon span:nth-child(2){
 			margin-left: -1px !important;
 		}
-     /* 隐藏播放器中分辨率旁的大会员标识，当然依然买了才能用 */
+		/* 隐藏播放器中分辨率旁的大会员标识，当然依然买了才能用 */
 		.bpx-player-ctrl-quality-badge-bigvip{
 			display: none !important;
 		}
@@ -352,55 +352,55 @@
 		.bili-pay-box-wrapper{
 			height: 97px !important;
 		}
-     /* 新番中大量与大会员相关的元素 */
-     /* 视频左下角，成为大会员按钮 */
+		/* 新番中大量与大会员相关的元素 */
+		/* 视频左下角，成为大会员按钮 */
 		.promptBar_remindActionWrap___CcG1{
 			display: none !important;
 		}
-     /* 视频左下角，“本片是大会员专享内容”文本 */
+		/* 视频左下角，“本片是大会员专享内容”文本 */
 		.promptBar_title__PKo6n{
 			display: none !important;
 		}
-     /* 视频右上角，“开通大会员 热播内容看不停” */
+		/* 视频右上角，“开通大会员 热播内容看不停” */
 		.vipPaybar_container__p_lv5{
 			display: none !important;
 		}
-     /* 番剧清晰度，1080p下方开通大会员提示 */
+		/* 番剧清晰度，1080p下方开通大会员提示 */
 		.bpx-player-ctrl-quality-text.bpx-player-ctrl-quality-text-vip-trial div:nth-child(2){
 			display: none !important;
 		}
-     /* 番剧清晰度，免费体验大会员清晰度隐藏 */
+		/* 番剧清晰度，免费体验大会员清晰度隐藏 */
 		.bpx-player-ctrl-quality-menu-feedback{
 			display: none !important;
 		}
-     /* 隐藏成为大会员全屏弹窗 */
+		/* 隐藏成为大会员全屏弹窗 */
 		.dialog1080p_popup_1080p_wrapper__8XOGL{
 			display: none !important;
 		}
-     /* 视频右上方作者处，资料展示的大会员狗牌 */
+		/* 视频右上方作者处，资料展示的大会员狗牌 */
 		.user-label{
 			display: none !important;
 		}
-     /* 视频右上方作者处，资料展示的用户名修正为黑色 */
+		/* 视频右上方作者处，资料展示的用户名修正为黑色 */
 		.up-name{
 			color: #000000 !important;
 		}
 		.name{
 			color: #000000 !important;
 		}
-     /* 视频评论区大会员名字修正为黑色 */
+		/* 视频评论区大会员名字修正为黑色 */
 		.user-name,.sub-user-name{
 			color: #000000 !important;
 		}
-     /* 视频评论区大会员名片中名字修正为黑色 */
+		/* 视频评论区大会员名片中名字修正为黑色 */
 		.card-user-name{
 			color: #000000 !important;
 		}
-     /* 视频评论区大会员名片中狗牌隐藏 */
+		/* 视频评论区大会员名片中狗牌隐藏 */
 		.card-user-vip{
 			display: none !important;
 		}
-     /* 动态页点进去查看详情后作者名称修正为黑色 */
+		/* 动态页点进去查看详情后作者名称修正为黑色 */
 		.opus-module-author__name{
 			color: #000000 !important;
 		}
@@ -574,11 +574,11 @@
 		.bili-user-profile-view__info__viplabel{
 			display: none !important;
 		}
-     /* 动态页 up 主名字修正名称为黑色 */
+		/* 动态页 up 主名字修正名称为黑色 */
 		.bili-dyn-title__text{
 			color: #000000 !important;
 		}
-     /* 动态页 up 主身份卡名字修正名称为黑色 */
+		/* 动态页 up 主身份卡名字修正名称为黑色 */
 		.bili-user-profile-view__info__uname{
 			color: #000000 !important;
 		}
