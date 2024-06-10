@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Tint Color
 @namespace			github.com/openstyles/stylus
-@version			0.1.4
+@version			0.1.5
 @description		Bilibili 自定义主色调（强调色）
 @author				zhaonan
 @preprocessor		stylus
@@ -116,6 +116,9 @@
 	.im-dynamic-link{
 		color: color-1 !important;
 	}
+	.link{
+		color: color-1 !important;
+	}
 	/* @我的中@颜色 */
 	.at{
 		color: color-1 !important;
@@ -138,5 +141,12 @@
 	/* 收到的赞中的删除通知和不再通知颜色 */
 	.action-button:hover{
 		color: color-0 !important;
+	}
+	/* 消息设置中的开关颜色 */
+	.radio-icon.css-o1815x .border{
+		fill: color-0 !important;
+	}
+	.radio-icon.css-o1815x .dot{
+		fill: color-0 !important;
 	}
 }
