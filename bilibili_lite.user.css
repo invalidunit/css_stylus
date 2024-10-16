@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.5.3
+@version			0.5.4
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -9,7 +9,7 @@
 
 
 @advanced checkbox hide-watch-later "隐藏添加至稍后再看" 0
-@advanced checkbox hide-charge "隐藏作者下方充电按钮" 1
+@advanced checkbox hide-charge "隐藏充电按钮" 1
 @advanced checkbox hide-video-cmd "隐藏播放视频中三连" 1
 @advanced checkbox hide-video-follow "隐藏播放视频中左上角关注" 1
 @advanced checkbox hide-video-ads "隐藏播放视频右侧广告" 1
@@ -147,6 +147,14 @@
 		/* 隐藏作者下方充电按钮 */
 		.old-charge-btn,.new-charge-btn{
 			display: none !important;
+		}
+		/* 隐藏视频播放结束时的充电按钮 */
+		.bpx-player-ending-functions-electric{
+			display: none !important;
+		}
+		/* 强制修正充电旁边关注按钮位置，使其看起来左对齐 */
+		.bpx-player-ending-functions-follow{
+			margin-left: 0px !important;
 		}
 	}
 	if hide-video-cmd {
