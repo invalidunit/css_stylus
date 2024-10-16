@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.5.6
+@version			0.5.7
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -190,6 +190,10 @@
 		}
 		/* 视频右边，列表最下方的广告，概率出现？ */
 		#right-bottom-banner{
+			display: none !important;
+		}
+		/* 2024_10_16 好像从 id 切换为了 class？ */
+		.right-bottom-banner{
 			display: none !important;
 		}
 		/* 视频右边，列表最下方的广告下方“大家围观的直播”，概率出现？ */
