@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.5.9
+@version			0.6.0
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -21,6 +21,7 @@
 @advanced checkbox hide-front-page-grid "隐藏首页顶部滚动推荐" 1
 @advanced checkbox hide-front-page-multi-tab-video "隐藏首页多选项卡视频" 1
 @advanced checkbox hide-desktop-download "隐藏首页右下角下载桌面端" 1
+@advanced checkbox hide-home-right-down-ads "隐藏首页右下角广告" 1
 @advanced checkbox hide-home-watchlater "隐藏首页右下稍后再看" 0
 @advanced checkbox hide-home-refresh "隐藏首页右下刷新内容" 0
 @advanced checkbox hide-home-feedback "隐藏首页右下反馈" 1
@@ -132,6 +133,12 @@
 	if hide-desktop-download {
 		/* 首页右下角会出现下载桌面端广告，概率出现？ */
 		.desktop-download-tip{
+			display: none !important;
+		}
+	}
+	if hide-home-right-down-ads {
+		/* 首页右下角会出现下载桌面端广告，概率出现？ */
+		.adcard .adcar-inner{
 			display: none !important;
 		}
 	}
