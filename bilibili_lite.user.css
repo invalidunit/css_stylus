@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.6.0-1
+@version			0.6.1
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -137,7 +137,7 @@
 		}
 	}
 	if hide-home-right-down-ads {
-		/* 首页右下角的广告 */
+		/* 首页右下角会出现下载桌面端广告，概率出现？ */
 		.adcard .adcar-inner{
 			display: none !important;
 		}
@@ -189,6 +189,10 @@
 			display: none !important;
 		}
 		#slide_ad,.slide-ad-exp{
+			display: none !important;
+		}
+		/* 番剧右边，弹幕列表上方出现的广告 */
+		.plp-r .paybar_container__WApBR{
 			display: none !important;
 		}
 		/* 视频右边，接下来播放下方出现的广告，例如视频与“我的世界”有关这里将会显示我的世界 B 站版下载 */
