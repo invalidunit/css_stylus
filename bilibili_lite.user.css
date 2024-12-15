@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.6.1-1
+@version			0.6.2
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -163,6 +163,10 @@
 		/* 强制修正充电旁边关注按钮位置，使其看起来左对齐 */
 		.bpx-player-ending-functions-follow{
 			margin-left: 0px !important;
+		}
+		/* 隐藏主页内的充电按钮 */
+		.col-2 .section.elec{
+			display: none !important;
 		}
 	}
 	if hide-video-cmd {
