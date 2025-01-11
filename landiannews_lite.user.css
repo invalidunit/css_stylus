@@ -1,0 +1,48 @@
+/* ==UserStyle==
+@name				Landiannews Lite
+@namespace			github.com/openstyles/stylus
+@version			0.1.0
+@description		Landiannews 移除部分广告
+@author				zhaonan
+@preprocessor		stylus
+@updateURL			https://raw.githubusercontent.com/invalidunit/css_stylus/main/landiannews_lite.user.css
+
+
+@advanced checkbox hide-body-ads "隐藏内容上方与下方广告" 1
+@advanced checkbox hide-right-buy-advice "隐藏右侧购买建议" 1
+@advanced checkbox hide-right-follow "隐藏右侧关注蓝点网" 1
+@advanced checkbox hide-comment "隐藏底部评论区" 1
+==/UserStyle== */
+
+@-moz-document domain("landiannews.com") {
+	if hide-disable-blocker-banner {
+		.wwads-cn{
+			display: none !important;
+		}
+	}
+	if hide-body-ads {
+		.content-gg{
+			display: none !important;
+		}
+	}
+	if hide-right-buy-advice {
+		#salong_widget_post-35{
+			display: none !important;
+		}
+	}
+	if hide-right-follow {
+		#media_image-50{
+			display: none !important;
+		}
+	}
+	if hide-right-office {
+		#media_image-74{
+			display: none !important;
+		}
+	}
+	if hide-comment {
+		#comments{
+			display: none !important;
+		}
+	}
+}
