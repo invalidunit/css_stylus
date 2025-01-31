@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Tint Color
 @namespace			github.com/openstyles/stylus
-@version			0.1.5
+@version			0.1.6
 @description		Bilibili 自定义主色调（强调色）
 @author				zhaonan
 @preprocessor		stylus
@@ -21,6 +21,7 @@
 		--text_link: color-0 !important;
 		--Brand_blue: color-0 !important;
 		--v_brand_blue_thin: color-2 !important;
+        --v_brand_blue_hover: color-1 !important;
 	}
 	/* 全局变量 */
 	::selection{
@@ -40,6 +41,10 @@
 	/* 修改开关颜色 */
 	.be-switch-container.is-checked .be-switch{
 		background-color: color-0 !important;
+	}
+	/* 视频右上角关注 */
+	.follow-btn.not-follow:hover{
+		background-color: color-1 !important;
 	}
 }
 
