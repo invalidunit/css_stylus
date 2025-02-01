@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.6.7
+@version			0.6.8
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -80,7 +80,7 @@
 	/* 全局与首页 */
 	/*
 	.split-line::after{
-		content: 'Bilibili Lite(0.6.7) by zhaonan';
+		content: 'Bilibili Lite(0.6.8) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -421,6 +421,9 @@
 		}
 		.bili-dyn-my-info__header .info .info__icon span:nth-child(2){
 			margin-left: -1px !important;
+		}
+        .upinfo-detail__top .vip{
+			display: none !important;
 		}
 		/* 隐藏播放器中分辨率旁的大会员标识，当然依然买了才能用 */
 		.bpx-player-ctrl-quality-badge-bigvip{
