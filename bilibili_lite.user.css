@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.6.5
+@version			0.6.6
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -80,7 +80,7 @@
 	/* 全局与首页 */
 	/*
 	.split-line::after{
-		content: 'Bilibili Lite(0.6.5) by zhaonan';
+		content: 'Bilibili Lite(0.6.6) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -111,6 +111,10 @@
 	.copyright .copyright-text{
 		opacity: 0.4 !important;
         pointer-events: none;
+	}
+	/* 隐藏视频右侧播放列表的 UP 图标 */
+	.upname svg{
+		display: none !important;
 	}
 	if front-page-load-more {
 		/* 将 .load-more-anchor 往上偏移 1000px 来达到加载更多视频卡的目的 */
@@ -461,7 +465,7 @@
 		.up-name{
 			color: #000000 !important;
 		}
-		.name{
+		.user .name{
 			color: #000000 !important;
 		}
 		/* 视频评论区大会员名字修正为黑色 */
