@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.6.6
+@version			0.6.7
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -62,7 +62,7 @@
 @advanced checkbox hide-top-left-04 "隐藏导航栏左侧 04" 0
 @advanced checkbox hide-top-left-05 "隐藏导航栏左侧 05" 1
 @advanced checkbox hide-top-left-06 "隐藏导航栏左侧 06" 0
-@advanced checkbox hide-top-left-07 "隐藏导航栏左侧 07" 0
+@advanced checkbox hide-top-left-07 "隐藏导航栏左侧 07" 1
 @advanced checkbox hide-top-left-08 "隐藏导航栏左侧 08" 1
 @advanced checkbox hide-top-left-09 "隐藏导航栏左侧 09" 1
 @advanced checkbox hide-top-left-10 "隐藏导航栏左侧 10" 1
@@ -80,7 +80,7 @@
 	/* 全局与首页 */
 	/*
 	.split-line::after{
-		content: 'Bilibili Lite(0.6.6) by zhaonan';
+		content: 'Bilibili Lite(0.6.7) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -482,6 +482,10 @@
 		}
 		/* 动态页点进去查看详情后作者名称修正为黑色 */
 		.opus-module-author__name{
+			color: #000000 !important;
+		}
+		/* 动态首页，左上个人用户名 */
+		.info .info__name{
 			color: #000000 !important;
 		}
 	}
