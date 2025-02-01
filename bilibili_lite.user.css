@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.6.8
+@version			0.6.9
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -27,7 +27,7 @@
 @advanced checkbox hide-home-feedback "隐藏首页右下反馈" 1
 @advanced checkbox hide-home-back-to-top "隐藏首页右下返回顶部" 0
 @advanced checkbox hide-search-results-ads "隐藏搜索结果顶部广告" 1
-@advanced checkbox hide-top-right-user-pendant "隐藏导航栏个人菜单中的头像挂件" 1
+@advanced checkbox hide-user-pendant "隐藏头像挂件" 1
 @advanced checkbox hide-top-right-user-vip "隐藏导航栏个人菜单中的大会员广告" 1
 @advanced checkbox hide-recommended-services "隐藏导航栏个人菜单中的推荐服务" 1
 @advanced checkbox hide-top-right-vip "隐藏导航栏右侧大会员" 1
@@ -80,7 +80,7 @@
 	/* 全局与首页 */
 	/*
 	.split-line::after{
-		content: 'Bilibili Lite(0.6.8) by zhaonan';
+		content: 'Bilibili Lite(0.6.9) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -252,8 +252,8 @@
 			display: none !important;
 		}
 	}
-	if hide-top-right-user-pendant {
-		/* 顶部导航栏个人中的头像挂件 */
+	if hide-user-pendant {
+		/* 头像挂件 */
 		.bili-avatar-pendent-dom{
 			display: none !important;
 		}
@@ -261,6 +261,12 @@
 		.b-avatar__layers div:nth-child(2){
 			display: none !important;
 		}
+        /* 播放视频作者头像带挂件修复 */
+        .up-avatar-wrap .up-avatar .bili-avatar{
+            width: 48px !important;
+            height: 48px !important;
+            transform: translate(0px, 0px) !important;
+        }
 	}
 	if hide-top-right-user-vip {
 		/* 顶部导航栏个人中的大会员广告 */
