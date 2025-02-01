@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Tint Color
 @namespace			github.com/openstyles/stylus
-@version			0.1.8
+@version			0.1.9
 @description		Bilibili 自定义主色调（强调色）
 @author				zhaonan
 @preprocessor		stylus
@@ -18,6 +18,7 @@
 	/* 全局变量 */
 	:root{
 		--brand_blue: color-0 !important;
+		--brand_blue_hover: color-1 !important;
 		--text_link: color-0 !important;
 		--Brand_blue: color-0 !important;
 		--v_brand_blue_thin: color-2 !important;
