@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Tint Color
 @namespace			github.com/openstyles/stylus
-@version			0.2.2
+@version			0.2.3
 @description		Bilibili 自定义主色调（强调色）
 @author				zhaonan
 @preprocessor		stylus
@@ -31,9 +31,9 @@
 		background: color-1 !important;
 	}
 	/* 扭曲弹幕开关颜色 */
-	.icon.normal,.icon.video,.icon.search-word,.bui-danmaku-switch-label,input[type="checkbox"]{
+    .bui-danmaku-switch-on svg path{
 		filter: hue-rotate(color-img deg) !important;
-	}
+    }
 	/* 扭曲列表正在播放颜色 */
 	.cur-play-icon{
 		filter: hue-rotate(color-img deg) !important;
