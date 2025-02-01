@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Tint Color
 @namespace			github.com/openstyles/stylus
-@version			0.1.9
+@version			0.2.0
 @description		Bilibili 自定义主色调（强调色）
 @author				zhaonan
 @preprocessor		stylus
@@ -46,10 +46,6 @@
     .bili-dyn-up-list__item__face.all{
 		filter: hue-rotate(color-img deg) !important;
 	}
-	/* 修改开关颜色 */
-	.be-switch-container.is-checked .be-switch{
-		background-color: color-0 !important;
-	}
 	/* 视频右上角关注 */
 	.follow-btn.not-follow:hover{
 		background-color: color-1 !important;
@@ -58,63 +54,9 @@
 
 @-moz-document domain("space.bilibili.com") {
 	/* 个人主页 */
-	/* “主页”下划线颜色 */
-	.n-cursor{
-		background: color-1 !important;
-	}
-	/* “我的粉丝会看到”和“最新发布”下划线颜色 */
-	.be-tab-cursor{
-		border-bottom: 1px solid color-1 !important;
-	}
-	/* “我的粉丝会看到”和“最新发布”下划线上方三角形颜色 */
-	.be-tab-cursor:after{
-		border-bottom: 3px solid color-1 !important;
-	}
-	/* 扭曲搜索放大镜图标颜色 */
-	.icon.search-btn:hover{
+	/* 扭曲右边创作中心颜色 */
+	.upload-section a{
 		filter: hue-rotate(color-img deg) !important;
-	}
-	/* 公告边框颜色 */
-	.content #i-ann-content textarea:hover{
-		border-color: color-1 !important;
-	}
-	/* 扭曲设置置顶视频颜色 */
-	.i-pin-empty-set.list-create:hover{
-		filter: hue-rotate(color-img deg) !important;
-	}
-	.i-pin-empty-set.list-create{
-		transition: filter -1s ease !important;
-	}
-	/* 激活的选项卡颜色 */
-	.be-tab-item.is-active{
-		color: color-1 !important;
-	}
-	.n .n-btn.active{
-		color: color-1 !important;
-	}
-	.n .n-btn:hover{
-		color: color-1 !important;
-	}
-	/* 扭曲右上角信息颜色 */
-	.n-statistics a:hover{
-		filter: hue-rotate(color-img deg) !important;
-	}
-	/* 扭曲我的视频旁边按钮颜色 */
-	.section-title a:hover{
-		filter: hue-rotate(color-img deg) !important;
-	}
-	.section-title a{
-		transition: filter -1s ease !important;
-	}
-	.channel-title div:hover{
-		filter: hue-rotate(color-img deg) !important;
-	}
-	.channel-title div{
-		transition: filter -1s ease !important;
-	}
-	/* 个人主页下方视频标题颜色 */
-	.detail a:hover{
-		color: color-1 !important;
 	}
 }
 
