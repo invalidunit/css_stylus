@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.7.0
+@version			0.7.0-1
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -110,7 +110,7 @@
 	/* “未经作者授权，禁止转载” 文字透明度调整 */
 	.copyright .copyright-text{
 		opacity: 0.4 !important;
-        pointer-events: none;
+		pointer-events: none;
 	}
 	/* 隐藏视频右侧播放列表的 UP 图标 */
 	.upname svg{
@@ -261,16 +261,16 @@
 		.b-avatar__layers div:nth-child(2){
 			display: none !important;
 		}
-        /* 播放视频作者头像带挂件修复 */
-        .up-avatar-wrap .up-avatar .bili-avatar{
-            width: 48px !important;
-            height: 48px !important;
-            transform: translate(0px, 0px) !important;
-        }
-        /* 头像上 NFT 挂件 */
-        .bili-avatar-nft-icon{
-            display: none !important;
-        }
+		/* 播放视频作者头像带挂件修复 */
+		.up-avatar-wrap .up-avatar .bili-avatar{
+			width: 48px !important;
+			height: 48px !important;
+			transform: translate(0px, 0px) !important;
+		}
+		/* 头像上 NFT 挂件 */
+		.bili-avatar-nft-icon{
+			display: none !important;
+		}
 	}
 	if hide-top-right-user-vip {
 		/* 顶部导航栏个人中的大会员广告 */
