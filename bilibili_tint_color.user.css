@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Tint Color
 @namespace			github.com/openstyles/stylus
-@version			0.2.5
+@version			0.2.6
 @description		Bilibili 自定义主色调（强调色）
 @author				zhaonan
 @preprocessor		stylus
@@ -34,7 +34,7 @@
 	/* 扭曲弹幕开关颜色 */
 	.icon.normal,.icon.video,.icon.search-word,.bui-danmaku-switch-label,input[type="checkbox"]{
 		filter: hue-rotate(color-img deg) !important;
-	}
+    }
 	/* 扭曲列表正在播放颜色 */
 	.cur-play-icon{
 		filter: hue-rotate(color-img deg) !important;
@@ -42,11 +42,11 @@
 	.link-content img{
 		filter: hue-rotate(color-img deg) !important;
 	}
-	.playing-gif{
+    .playing-gif{
 		filter: hue-rotate(color-img deg) !important;
 	}
 	/* 动态首页，全部动态图标 */
-	.bili-dyn-up-list__item__face.all{
+    .bili-dyn-up-list__item__face.all{
 		filter: hue-rotate(color-img deg) !important;
 	}
 	/* 视频右上角关注 */
@@ -54,17 +54,21 @@
 		background-color: color-1 !important;
 	}
 	/* 番剧频道图标颜色扭曲 */
-	.mediainfo_btnHome__P2fri svg{
+    .mediainfo_btnHome__P2fri svg{
 		filter: hue-rotate(color-img deg) !important;
-	}
+    }
 	/* 番剧选集底色 */
-	.SectionSelector_sectionItem__rFNEH.SectionSelector_active__dySMp{
+    .SectionSelector_sectionItem__rFNEH.SectionSelector_active__dySMp{
 		background-color: color-2 !important;
-	}
+    }
 	/* 添加到收藏夹的确定 */
-	.collection-m-exp .bottom .btn:hover {
+    .collection-m-exp .bottom .btn:hover {
 		background: color-1 !important;
-	}
+    }
+	/* 扭曲正在缓冲颜色 */
+	.bpx-player-state-buff-icon{
+		filter: hue-rotate(color-img deg) !important;
+    }
 }
 
 @-moz-document domain("space.bilibili.com") {
