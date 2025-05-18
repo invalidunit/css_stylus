@@ -5,7 +5,7 @@
 @description		Bilibili 自定义主色调（强调色）
 @author				zhaonan
 @preprocessor		stylus
-@updateURL			https://raw.githubusercontent.com/invalidunit/css_stylus/main/bilibili_tint_color.user.css
+@updateURL			https://invalidunit.github.io/css_stylus/bilibili_tint_color.user.css
 
 @advanced number color-img "图片变色百分比" 150
 @advanced color color-0 "color-0" #FF7790
