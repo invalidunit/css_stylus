@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.7.2
+@version			0.7.2-1
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -80,7 +80,7 @@
 	/* 全局与首页 */
 	/*
 	.split-line::after{
-		content: 'Bilibili Lite(0.7.1) by zhaonan';
+		content: 'Bilibili Lite(0.7.2-1) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -123,7 +123,7 @@
 		}
 	}
 	if hide-front-page-ads {
-		/* 首页视频中偶尔插入一两个广告，不过隐藏后会白一块，配合下方隐藏前两行视频即可解决 */
+		/* 首页视频中偶尔插入一两个广告，不过隐藏后会白一块 */
 		.container div[class="bili-video-card is-rcmd"]{
 			display: none !important;
 		}
