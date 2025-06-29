@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.7.2-1
+@version			0.7.3
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
-@updateURL			https://raw.githubusercontent.com/invalidunit/css_stylus/main/bilibili_lite.user.css
+@updateURL			https://invalidunit.github.io/css_stylus/bilibili_lite.user.css
 
 
 @advanced checkbox hide-watch-later "隐藏添加至稍后再看" 0
@@ -16,9 +16,8 @@
 @advanced checkbox hide-video-ads "隐藏播放视频右侧广告" 1
 @advanced checkbox hide-barrage-list "隐藏播放视频右侧弹幕列表" 1
 @advanced checkbox front-page-load-more "首页预加载更多视频卡" 1
-@advanced checkbox hide-front-page-ads "隐藏首页视频中插入的广告" 1
-@advanced checkbox hide-front-page-feed-card "隐藏首页顶部前两行视频" 1
 @advanced checkbox hide-front-page-grid "隐藏首页顶部滚动推荐" 1
+@advanced checkbox hide-front-page-ads "隐藏首页视频中插入的广告" 1
 @advanced checkbox hide-front-page-multi-tab-video "隐藏首页多选项卡视频" 1
 @advanced checkbox hide-desktop-download "隐藏首页右下角下载桌面端" 1
 @advanced checkbox hide-home-right-down-ads "隐藏首页右下角广告" 1
@@ -79,41 +78,28 @@
 @-moz-document domain("bilibili.com") {
 	/* 全局与首页 */
 	/*
-	.split-line::after{
-		content: 'Bilibili Lite(0.7.2-1) by zhaonan';
+	div.split-line::after{
+		content: 'Bilibili Lite(0.7.3) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
 	}
 	*/
-	/* 修复导航栏搜索框不居中问题，这应该会绝对居中 */
-	.center-search-container{
-		position: absolute !important;
-		transform: translate(-50%, -50%) !important;
-		left: 50%;
-		top: 50%;
-		width: 30%;
-	}
-	/* 修复导航栏左侧悬浮窗口过于偏移出屏幕左边的问题 */
-	.v-popover.is-bottom-start .v-popover-content{
-		margin-left: 110% !important;
-		background: #fff !important;
-	}
-	/* 修复导航栏右侧悬浮窗口过于偏移出屏幕右边的问题 */
-	.v-popover-wrap:not([class="v-popover-wrap header-avatar-wrap"]):not([class="v-popover-wrap right-entry__outside right-entry--message"]) .v-popover{
-		margin-left: custom-window-offset-right * 1% !important;
+	/* 隐藏 Bilibili 顶部检测到去广告插件的提示横幅 */
+	div.adblock-tips{
+		display: none !important;
 	}
 	/* 隐藏弹幕发送框内多余的东西 */
 	.bpx-player-video-inputbar .bpx-player-dm-hint{
 		display: none !important;
 	}
 	/* “未经作者授权，禁止转载” 文字透明度调整 */
-	.copyright .copyright-text{
+	div.copyright div.copyright-text{
 		opacity: 0.4 !important;
 		pointer-events: none;
 	}
 	/* 隐藏视频右侧播放列表的 UP 图标 */
-	.upname svg{
+	div.upname svg{
 		display: none !important;
 	}
 	if front-page-load-more {
@@ -122,37 +108,34 @@
 			transform: translateY(-1000px) !important;
 		}
 	}
-	if hide-front-page-ads {
-		/* 首页视频中偶尔插入一两个广告，不过隐藏后会白一块 */
-		.container div[class="bili-video-card is-rcmd"]{
-			display: none !important;
-		}
-		.bili-video-card__skeleton.loading_animation{
-			display: none !important;
-		}
-	}
-	if hide-front-page-feed-card {
-		/* 首页视频前两行视频隐藏 */
-		.recommended-swipe.grid-anchor{
-			display: none !important;
-		}
-		.feed-card{
-			display: none !important;
-		}
-		/* 同时隐藏右方换一换按钮 */
-		.feed-roll-btn{
-			display: none !important;
-		}
-	}
 	if hide-front-page-grid {
 		/* 首页视频左上方滚动推荐 */
 		.recommended-swipe{
 			display: none !important;
 		}
+		/* 修复首页前两行视频与接下来视频卡大小不一致的问题 */
+		.recommended-container_floor-aside .container>* {
+			margin-top: 0px !important;
+		}
+		.recommended-container_floor-aside .container {
+			grid-gap: 36px 20px !important;
+		}
+	}
+	if hide-front-page-ads {
+		/* 首页视频中偶尔插入一两个广告隐藏 */
+		div.feed-card:not(:has(div.bili-video-card__wrap)){
+			display: none !important;
+		}
+		div.bili-video-card:not(:has(div.bili-video-card__wrap)){
+			display: none !important;
+		}
+		div.bili-feed-card:not(:has(div.bili-video-card__wrap)) {
+			display: none;
+		}
 	}
 	if hide-front-page-multi-tab-video {
 		/* 首页隐藏多选项卡视频（直播，番剧，国创，综艺。。。） */
-		.floor-single-card{
+		div.floor-single-card{
 			display: none !important;
 		}
 	}
@@ -762,14 +745,6 @@
 @-moz-document domain("message.bilibili.com") {
 	/* 消息中心 */
 	/* 消息中心的导航栏居然是独立的。。。 */
-	/* 修复导航栏搜索框不居中问题，这应该会绝对居中 */
-	.nav-search-box{
-		position: absolute !important;
-		transform: translate(-50%, -50%) !important;
-		left: 50%;
-		top: 50%;
-		width: 30%;
-	}
 	if hide-top-right-user-vip {
 		/* 顶部导航栏个人中的大会员广告 */
 		.user-con.signin div span .mini-vip{
