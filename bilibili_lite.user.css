@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.7.3
+@version			0.7.4
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -79,12 +79,24 @@
 	/* 全局与首页 */
 	/*
 	div.split-line::after{
-		content: 'Bilibili Lite(0.7.3) by zhaonan';
+		content: 'Bilibili Lite(0.7.4) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
 	}
 	*/
+	/* 修复导航栏搜索框不居中问题，这应该会绝对居中 */
+	.center-search-container{
+		position: absolute !important;
+		transform: translate(-50%, -50%) !important;
+		left: 50%;
+		top: 50%;
+		width: 30%;
+	}
+	/* 修复导航栏右侧悬浮窗口过于偏移出屏幕右边的问题 */
+	ul.right-entry .v-popover-wrap:not([class="v-popover-wrap header-avatar-wrap"]):not([class="v-popover-wrap right-entry__outside right-entry--message"]) .v-popover{
+		margin-left: custom-window-offset-right * 1% !important;
+	}
 	/* 隐藏 Bilibili 顶部检测到去广告插件的提示横幅 */
 	div.adblock-tips{
 		display: none !important;
@@ -737,147 +749,6 @@
 	if hide-recommend {
 		/* 动态下方推荐应用，例如第五人格的动态下方会推荐第五人格游戏下载 */
 		.bili-dyn-content__orig__additional{
-			display: none !important;
-		}
-	}
-}
-
-@-moz-document domain("message.bilibili.com") {
-	/* 消息中心 */
-	/* 消息中心的导航栏居然是独立的。。。 */
-	if hide-top-right-user-vip {
-		/* 顶部导航栏个人中的大会员广告 */
-		.user-con.signin div span .mini-vip{
-			display: none !important;
-		}
-	}
-	if hide-recommended-services {
-		/* 隐藏导航栏个人菜单中的推荐服务 */
-		.vp-container .links a:nth-child(3){
-			display: none !important;
-		}
-	}
-	if hide-top-right-upload {
-		/* 顶部导航栏右侧投稿 */
-		.nav-user-center div:nth-child(3) span span{
-			display: none !important;
-		}
-	}
-	if hide-vip {
-		/* 顶部导航栏个人资料处修正大会员红色字体为黑色 */
-		.vp-container .nickname{
-			color: #000000 !important;
-		}
-		/* 顶部导航栏个人名称下方的狗牌 */
-		.vp-container .levelIcon{
-			display: none !important;
-		}
-	}
-	if hide-top-left-01 {
-		/* 顶部导航栏左侧第 01 个 */
-		.nav-link ul li:nth-child(1){
-			display: none !important;
-		}
-	}
-	if hide-top-left-02 {
-		/* 顶部导航栏左侧第 02 个 */
-		.nav-link ul li:nth-child(2){
-			display: none !important;
-		}
-	}
-	if hide-top-left-03 {
-		/* 顶部导航栏左侧第 03 个 */
-		.nav-link ul li:nth-child(3){
-			display: none !important;
-		}
-	}
-	if hide-top-left-04 {
-		/* 顶部导航栏左侧第 04 个 */
-		.nav-link ul li:nth-child(4){
-			display: none !important;
-		}
-	}
-	if hide-top-left-05 {
-		/* 顶部导航栏左侧第 05 个， 当前为“会员购” */
-		.nav-link ul li:nth-child(5){
-			display: none !important;
-		}
-	}
-	if hide-top-left-06 {
-		/* 顶部导航栏左侧第 06 个 */
-		.nav-link ul li:nth-child(6){
-			display: none !important;
-		}
-	}
-	if hide-top-left-07 {
-		/* 顶部导航栏左侧第 07 个 */
-		.nav-link ul li:nth-child(7){
-			display: none !important;
-		}
-	}
-	if hide-top-left-08 {
-		/* 顶部导航栏左侧第 08 个， 当前为“MSI 推广” */
-		.nav-link ul li:nth-child(8){
-			display: none !important;
-		}
-	}
-	if hide-top-left-09 {
-		/* 顶部导航栏左侧第 09 个， 当前为“下载客户端” */
-		.nav-link ul li:nth-child(9){
-			display: none !important;
-		}
-	}
-	if hide-top-left-10 {
-		/* 顶部导航栏左侧第 10 个 */
-		.nav-link ul li:nth-child(10){
-			display: none !important;
-		}
-	}
-	if hide-top-right-01 {
-		/* 顶部导航栏右侧第 01 个 */
-		.user-con.signin div:nth-child(1){
-			display: none !important;
-		}
-	}
-	if hide-top-right-02 {
-		/* 顶部导航栏右侧第 02 个 */
-		.user-con.signin div:nth-child(2){
-			display: none !important;
-		}
-	}
-	if hide-top-right-03 {
-		/* 顶部导航栏右侧第 03 个 */
-		.user-con.signin div:nth-child(3){
-			display: none !important;
-		}
-	}
-	if hide-top-right-04 {
-		/* 顶部导航栏右侧第 04 个 */
-		.user-con.signin div:nth-child(4){
-			display: none !important;
-		}
-	}
-	if hide-top-right-05 {
-		/* 顶部导航栏右侧第 05 个 */
-		.user-con.signin div:nth-child(5){
-			display: none !important;
-		}
-	}
-	if hide-top-right-06 {
-		/* 顶部导航栏右侧第 06 个 */
-		.user-con.signin div:nth-child(6){
-			display: none !important;
-		}
-	}
-	if hide-top-right-07 {
-		/* 顶部导航栏右侧第 07 个， 当前为“创作中心” */
-		.user-con.signin div:nth-child(7){
-			display: none !important;
-		}
-	}
-	if hide-top-right-08 {
-		/* 顶部导航栏右侧第 08 个， 当前为“创作中心” */
-		.user-con.signin div:nth-child(8){
 			display: none !important;
 		}
 	}
