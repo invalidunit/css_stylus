@@ -135,10 +135,10 @@
 	}
 	if hide-front-page-ads {
 		/* 首页视频中偶尔插入一两个广告隐藏 */
-		div.bili-feed-card:has(.bili-video-card.is-rcmd:not(.enable-no-interest)){
+		div.feed-card:has(div.bili-feed-card>div.bili-video-card.is-rcmd:not(.enable-no-interest)){
 			display: none !important;
 		}
-		div.feed-card:has(div.bili-feed-card>div.bili-video-card.is-rcmd:not(.enable-no-interest)){
+		div.bili-feed-card:has(.bili-video-card.is-rcmd:not(.enable-no-interest)){
 			display: none !important;
 		}
 	}
