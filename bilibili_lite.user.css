@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.7.5-1
+@version			0.7.6
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -26,6 +26,7 @@
 @advanced checkbox hide-home-feedback "隐藏首页右下反馈" 1
 @advanced checkbox hide-home-back-to-top "隐藏首页右下返回顶部" 0
 @advanced checkbox hide-search-results-ads "隐藏搜索结果顶部广告" 1
+@advanced checkbox hide-search-page-ads "隐藏搜索页广告卡" 1
 @advanced checkbox hide-user-pendant "隐藏头像挂件" 1
 @advanced checkbox hide-top-right-user-vip "隐藏导航栏个人菜单中的大会员广告" 1
 @advanced checkbox hide-recommended-services "隐藏导航栏个人菜单中的推荐服务" 1
@@ -79,7 +80,7 @@
 	/* 全局与首页 */
 	/*
 	div.split-line::after{
-		content: 'Bilibili Lite(0.7.5-1) by zhaonan';
+		content: 'Bilibili Lite(0.7.6) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -311,7 +312,7 @@
 		}
 	}
 	if hide-video-notes {
-        /* 隐藏视频下方笔记 */
+		/* 隐藏视频下方笔记 */
 		.video-note{
 			display: none !important;
 		}
@@ -394,6 +395,12 @@
 			display: none !important;
 		}
 	}
+	if hide-search-page-ads {
+		/* 隐藏搜索页广告卡 */
+		div.video-list>div:has(a[href*="cm.bilibili.com"]) {
+		display: none !important;
+		}
+	}
 	if hide-feedback {
 		/* 主页右下角反馈按钮 */
 		.navTools_floatNavExp__iNll7{
@@ -427,7 +434,7 @@
 		.bili-dyn-my-info__header .info .info__icon span:nth-child(2){
 			margin-left: -1px !important;
 		}
-        .upinfo-detail__top .vip{
+		.upinfo-detail__top .vip{
 			display: none !important;
 		}
 		/* 隐藏播放器中分辨率旁的大会员标识，当然依然买了才能用 */
