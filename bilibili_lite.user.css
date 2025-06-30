@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.7.6
+@version			0.7.7
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -36,11 +36,6 @@
 @advanced checkbox hide-ai-in-unsupport "若不支持，则隐藏视频下方 AI" 1
 @advanced checkbox hide-video-notes "隐藏视频下方笔记" 1
 @advanced checkbox hide-video-bottom-ad "隐藏评论区上方广告" 1
-@advanced checkbox hide-auth "隐藏个人主页右侧 bilibili 认证" 1
-@advanced checkbox hide-creation "隐藏个人主页右侧创作中心" 1
-@advanced checkbox hide-studio "隐藏个人主页右侧直播间" 1
-@advanced checkbox hide-info "隐藏个人主页右侧个人资料" 1
-@advanced checkbox hide-game "隐藏个人主页右侧最近玩过的游戏" 1
 @advanced checkbox hide-feedback "隐藏右下反馈" 1
 @advanced checkbox hide-vip "隐藏大会员痕迹" 1
 @advanced checkbox hide-verify "隐藏认证" 1
@@ -48,14 +43,12 @@
 @advanced number custom-window-offset-right "自定义导航栏右侧悬浮窗口偏移" -320
 @advanced checkbox hide-community "隐藏动态右侧的社区中心" 1
 @advanced checkbox hide-recommend "隐藏动态中相关应用推荐" 1
-@advanced checkbox hide-user-right-01 "隐藏用户主页右侧 01" 0
-@advanced checkbox hide-user-right-02 "隐藏用户主页右侧 02" 0
-@advanced checkbox hide-user-right-03 "隐藏用户主页右侧 03" 0
-@advanced checkbox hide-user-right-04 "隐藏用户主页右侧 04" 0
-@advanced checkbox hide-user-right-05 "隐藏用户主页右侧 05" 0
-@advanced checkbox hide-user-right-06 "隐藏用户主页右侧 06" 0
-@advanced checkbox hide-user-right-07 "隐藏用户主页右侧 07" 0
-@advanced checkbox hide-user-right-08 "隐藏用户主页右侧 08" 0
+@advanced checkbox hide-user-home-auth "隐藏用户主页认证" 1
+@advanced checkbox hide-user-home-upload "隐藏用户主页创作中心" 1
+@advanced checkbox hide-user-home-notice "隐藏用户主页公告" 0
+@advanced checkbox hide-user-home-live-streaming "隐藏用户主页直播间" 1
+@advanced checkbox hide-user-home-game "隐藏用户主页游戏" 1
+@advanced checkbox hide-user-home-user-info "隐藏用户主页个人资料" 0
 @advanced checkbox hide-top-left-01 "隐藏导航栏左侧 01" 0
 @advanced checkbox hide-top-left-02 "隐藏导航栏左侧 02" 0
 @advanced checkbox hide-top-left-03 "隐藏导航栏左侧 03" 0
@@ -80,7 +73,7 @@
 	/* 全局与首页 */
 	/*
 	div.split-line::after{
-		content: 'Bilibili Lite(0.7.6) by zhaonan';
+		content: 'Bilibili Lite(0.7.7) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -335,36 +328,6 @@
 		}
 		/* 评论区下方用 bili-comments，感觉评论区应该都搞不了了 */
 	}
-	if hide-auth {
-		/* 个人主页右侧 bilibili 认证 */
-		.col-2 div .section{
-			display: none !important;
-		}
-	}
-	if hide-creation {
-		/* 个人主页右侧创作中心 */
-		.col-2 .section.i-m{
-			display: none !important;
-		}
-	}
-	if hide-studio {
-		/* 个人主页右侧直播间 */
-		.col-2 .section.i-live{
-			display: none !important;
-		}
-	}
-	if hide-info {
-		/* 个人主页右侧个人资料 */
-		.col-2 .section.user-info{
-			display: none !important;
-		}
-	}
-	if hide-game {
-		/* 个人主页右侧个人资料 */
-		.col-2 .section.game{
-			display: none !important;
-		}
-	}
 	if hide-home-watchlater {
 		/* 主页右下角稍后播放按钮 */
 		.palette-button-wrap .watchlater-pip-button{
@@ -539,51 +502,39 @@
 			display: none !important;
 		}
 	}
-	if hide-user-right-01 {
-		/* 个人主页右侧栏目第 01 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(1){
+	if hide-user-home-auth {
+		/* 用户主页认证 */
+		div.space-home div.aside div.home-aside-section:has(div.auth-section){
 			display: none !important;
 		}
 	}
-	if hide-user-right-02 {
-		/* 个人主页右侧栏目第 02 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(2){
+	if hide-user-home-upload {
+		/* 用户主页创作中心 */
+		div.space-home div.aside div.home-aside-section:has(div.upload-section){
 			display: none !important;
 		}
 	}
-	if hide-user-right-03 {
-		/* 个人主页右侧栏目第 03 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(3){
+	if hide-user-home-notice {
+		/* 用户主页公告 */
+		div.space-home div.aside div.home-aside-section:has(div.ann-section){
 			display: none !important;
 		}
 	}
-	if hide-user-right-04 {
-		/* 个人主页右侧栏目第 04 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(4){
+	if hide-user-home-live-streaming {
+		/* 用户主页直播间 */
+		div.space-home div.aside div.home-aside-section:has(div.aside-card){
 			display: none !important;
 		}
 	}
-	if hide-user-right-05 {
-		/* 个人主页右侧栏目第 05 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(5){
+	if hide-user-home-game {
+		/* 用户主页游戏 */
+		div.space-home div.aside div.home-aside-section:has(div.game-section){
 			display: none !important;
 		}
 	}
-	if hide-user-right-06 {
-		/* 个人主页右侧栏目第 06 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(6){
-			display: none !important;
-		}
-	}
-	if hide-user-right-07 {
-		/* 个人主页右侧栏目第 07 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(7){
-			display: none !important;
-		}
-	}
-	if hide-user-right-08 {
-		/* 个人主页右侧栏目第 08 个 */
-		div.space-home div.aside div.home-aside-section:nth-child(8){
+	if hide-user-home-user-info {
+		/* 用户主页个人资料 */
+		div.space-home div.aside div.home-aside-section:has(div.info-section){
 			display: none !important;
 		}
 	}
