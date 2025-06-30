@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.7.7
+@version			0.7.8
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -45,6 +45,7 @@
 @advanced checkbox hide-recommend "隐藏动态中相关应用推荐" 1
 @advanced checkbox hide-user-home-auth "隐藏用户主页认证" 1
 @advanced checkbox hide-user-home-upload "隐藏用户主页创作中心" 1
+@advanced checkbox hide-user-home-charge "隐藏用户主页充电" 1
 @advanced checkbox hide-user-home-notice "隐藏用户主页公告" 0
 @advanced checkbox hide-user-home-live-streaming "隐藏用户主页直播间" 1
 @advanced checkbox hide-user-home-game "隐藏用户主页游戏" 1
@@ -73,7 +74,7 @@
 	/* 全局与首页 */
 	/*
 	div.split-line::after{
-		content: 'Bilibili Lite(0.7.7) by zhaonan';
+		content: 'Bilibili Lite(0.7.8) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -511,6 +512,12 @@
 	if hide-user-home-upload {
 		/* 用户主页创作中心 */
 		div.space-home div.aside div.home-aside-section:has(div.upload-section){
+			display: none !important;
+		}
+	}
+	if hide-user-home-charge {
+		/* 用户主页充电 */
+		div.space-home div.aside div.home-aside-section:has(div.elec-section){
 			display: none !important;
 		}
 	}
