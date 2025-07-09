@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.8.0
+@version			0.8.1
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -73,7 +73,7 @@
 	/* 全局 */
 	/*
 	div.split-line::after{
-		content: 'Bilibili Lite(0.8.0) by zhaonan';
+		content: 'Bilibili Lite(0.8.1) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
@@ -241,8 +241,10 @@
 		#activity_vote{
 			display: none !important;
 		}
-		/* 如果 .act-now 效果异常应替换成 .inside-wrp */
-		.ad-report, .ad-floor-exp{
+        div.left-container div.activity-m-v1:has(div.inside-wrp){
+			display: none !important;
+		}
+		div.ad-report, div.ad-floor-exp{
 			display: none !important;
 		}
 		/* 视频下方评论区使用 bili-comments，感觉整个评论区应该都搞不了了 */
