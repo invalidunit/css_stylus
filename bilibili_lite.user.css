@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Bilibili Lite
 @namespace			github.com/openstyles/stylus
-@version			0.8.1
+@version			0.8.2
 @description		Bilibili 移除部分广告，以及禁用部分视图
 @author				zhaonan
 @preprocessor		stylus
@@ -65,7 +65,7 @@
 @advanced checkbox hide-top-right-05 "隐藏导航栏右侧 05" 0
 @advanced checkbox hide-top-right-06 "隐藏导航栏右侧 06" 0
 @advanced checkbox hide-top-right-07 "隐藏导航栏右侧 07" 1
-@advanced number custom-window-offset-right "自定义导航栏右侧悬浮窗口偏移" -320
+@advanced number custom-window-offset-right "自定义导航栏右侧悬浮窗口偏移" -340
 @advanced checkbox hide-bottom "隐藏底部" 1
 ==/UserStyle== */
 
@@ -73,7 +73,7 @@
 	/* 全局 */
 	/*
 	div.split-line::after{
-		content: 'Bilibili Lite(0.8.1) by zhaonan';
+		content: 'Bilibili Lite(0.8.2) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
