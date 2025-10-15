@@ -72,7 +72,7 @@
 @-moz-document domain("bilibili.com") {
 	/* 全局 */
 	.split-line::after{
-		content: 'Bilibili Lite(0.8.2) by zhaonan';
+		content: 'Bilibili Lite(0.8.2-cascadea) by zhaonan';
 		font-size: 8px;
 		opacity: 0.15;
 		position: absolute;
