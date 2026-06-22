@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name				Landiannews Lite
 @namespace			github.com/openstyles/stylus
-@version			0.1.0
+@version			0.1.1
 @description		Landiannews 移除部分广告
 @author				zhaonan
 @preprocessor		stylus
@@ -14,7 +14,7 @@
 @advanced checkbox hide-comment "隐藏底部评论区" 1
 ==/UserStyle== */
 
-@-moz-document domain("landiannews.com") {
+@-moz-document domain("landiannews.com"), domain("landian.news") {
 	if hide-disable-blocker-banner {
 		.wwads-cn{
 			display: none !important;
